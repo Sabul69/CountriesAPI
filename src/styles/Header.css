@@ -1,0 +1,34 @@
+.Title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E3163 ;
+    color: white;
+    font-size: 2rem;
+}
+.path{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem; 
+    width: 100%;
+}
+
+.path a{
+    border-radius: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #2D46B9; 
+    width: 10rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: .3s ease;
+}
+
+.path a:hover{
+
+    background-color: #fff; 
+    color: #2D46B9;
+}

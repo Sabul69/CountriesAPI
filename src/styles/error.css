@@ -1,0 +1,12 @@
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.error h2{
+    font-size: 5rem;
+}
+.error h3{
+    font-size: 2rem;
+}
