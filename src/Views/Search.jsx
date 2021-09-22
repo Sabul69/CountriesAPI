@@ -9,19 +9,17 @@ import "../styles/Search.css"
 
 const Search = () => {
     const [country, setCountry] = useState(null);
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(false);    
+    const [data, setData] = useState(null);    
      const handleSearchCountry = async () => {
          const url = `https://restcountries.eu/rest/v2/name/${country}`
          try {
             const response = await fetch(url);
             const result = await response.json();
-            setError(false)
             setData(result[0]);
             console.log(data);
             
          } catch (er) {
-             setError(true);
+             console.log(er);
          }
      }
     return(
@@ -39,7 +37,8 @@ const Search = () => {
                 <Form
                 name = {data.name}
                 flag = {data.flag}
-                Key = {data.alpha3Code}
+                id = {data.alpha3Code}
+                capital = {data.capital}
                 />
             )
         )}

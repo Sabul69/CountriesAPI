@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 //hooks
 import useFetch from "../hooks/useFetch";
@@ -7,22 +7,31 @@ import "../styles/Home.css"
 //Componentes
 import Form from "../components/Home/Form";
 import Header from "../components/Header";
-// import { map } from "async";
-
+import Loader from "../components/Loader";
 function Home() {
-  const {data} = useFetch("https://restcountries.eu/rest/v2/all")
+  const [loader, setloader] = useState(true)
+  const {data} = useFetch("https://restcountries.eu/rest/v2/all", setloader)
 
   return(
     <>
     <Header/>
     <div className="mainDiv">
-    {data.map(numero =>(
+    { loader? 
+      (
+       <Loader/>
+      )
+      :(<>
+    {data.map((numero, pos) =>(
     <Form
     name = {numero.name}
     flag = {numero.flag}
-    Key = {numero.alpha3Code}
+    id = {numero.alpha3Code}
+    key ={pos}
+    capital = {numero.capital}
     />
     ))}
+    </>)
+    }
     </div>
     </>
   );

@@ -16,7 +16,7 @@ function App() {
         <Route path = "/search" exact>
           <Search/>
         </Route>
-        <Route path = "/country/:key" exact>
+        <Route path = "/country/:key/:capital" exact>
         <Info/>
       </Route>
         <Route path = "*" >
