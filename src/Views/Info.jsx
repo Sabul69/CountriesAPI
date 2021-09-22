@@ -17,7 +17,7 @@ const Info = () => {
 useEffect(() => {
     const handleFetch = async () =>{
         try {
-            const url = `https://restcountries.eu/rest/v2/alpha/${key}`
+            const url = `https://restcountries.com/v2/alpha/${key}`
             const response = await fetch(url);
             const result = await response.json();
             setSingleData(result);
@@ -54,7 +54,7 @@ useEffect(() => {
                      <>
                 <div className="card">
                     <div className="info">
-                    <img src={singleData.flag} alt={singleData.flag}/>
+                    <img src={singleData.flags[0]} alt={singleData.flag}/>
                     <p>Pais: <span>{singleData.name}</span></p>
                     <p>Capital: <span>{singleData.capital}</span></p>
                     <p>Region: <span>{singleData.region}</span></p>

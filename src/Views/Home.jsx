@@ -10,7 +10,7 @@ import Header from "../components/Header";
 import Loader from "../components/Loader";
 function Home() {
   const [loader, setloader] = useState(true)
-  const {data} = useFetch("https://restcountries.eu/rest/v2/all", setloader)
+  const {data} = useFetch("https://restcountries.com/v2/all", setloader)
 
   return(
     <>
@@ -24,7 +24,7 @@ function Home() {
     {data.map((numero, pos) =>(
     <Form
     name = {numero.name}
-    flag = {numero.flag}
+    flag = {numero.flags[0]}
     id = {numero.alpha3Code}
     key ={pos}
     capital = {numero.capital}

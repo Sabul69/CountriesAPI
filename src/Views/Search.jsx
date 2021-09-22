@@ -11,7 +11,7 @@ const Search = () => {
     const [country, setCountry] = useState(null);
     const [data, setData] = useState(null);    
      const handleSearchCountry = async () => {
-         const url = `https://restcountries.eu/rest/v2/name/${country}`
+         const url = `https://restcountries.com/v2/name/${country}`
          try {
             const response = await fetch(url);
             const result = await response.json();
@@ -36,7 +36,7 @@ const Search = () => {
             data && (
                 <Form
                 name = {data.name}
-                flag = {data.flag}
+                flag = {data.flags[0]}
                 id = {data.alpha3Code}
                 capital = {data.capital}
                 />
